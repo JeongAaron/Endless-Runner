@@ -23,15 +23,25 @@ public class RoadManager : MonoBehaviour
        // newRoad.transform.position = new Vector3(0, 0, newZ);
        // roads.Add(newRoad);
     }
+    private bool isMoving = false;
+    public void OnStartButtonClick()
+    {
+        isMoving = true;
+        Camera.main.transform.position = new Vector3(0, 3, -4);
+        Camera.main.transform.rotation = Quaternion.Euler(12f, 0f, 0f);
+    }
     void Start()
     {
         
     }
     void Update()
     {
-        for(int i = 0; i< roads.Count; i++)
+        if (isMoving)
         {
-            roads[i].transform.Translate(speed * Vector3.back * Time.deltaTime);
+            for (int i = 0; i < roads.Count; i++)
+            {
+                roads[i].transform.Translate(speed * Vector3.back * Time.deltaTime);
+            }
         }
     }
 }
