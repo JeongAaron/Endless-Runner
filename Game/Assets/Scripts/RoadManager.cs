@@ -11,6 +11,7 @@ public class RoadManager : MonoBehaviour
     [SerializeField] float speed;
     //[SerializeField] float offset = 40.0f;
     [SerializeField] float newZ = 40.0f;
+    [SerializeField] GameObject start;
     public void InitializePostion()
     {
         GameObject newRoad = roads[0];
@@ -29,10 +30,12 @@ public class RoadManager : MonoBehaviour
         isMoving = true;
         Camera.main.transform.position = new Vector3(0, 3, -4);
         Camera.main.transform.rotation = Quaternion.Euler(12f, 0f, 0f);
+        start.SetActive(false);
     }
     void Start()
     {
-        
+        Camera.main.transform.position = new Vector3(1.1f, 0.5f, 0.5f);
+        Camera.main.transform.rotation = Quaternion.Euler(-22f, -95f, 0f);
     }
     void Update()
     {

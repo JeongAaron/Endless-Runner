@@ -12,12 +12,15 @@ public class Runner : MonoBehaviour
         MIDDLE = 0,
         RIGHT = 1
     }
+    private void Awake()
+    {
+        roadLine = RoadLine.MIDDLE;
+        rb = GetComponent<Rigidbody>();
+    }
     public RoadLine roadLine;
     private Rigidbody rb;
     void Start()
     {
-        roadLine = RoadLine.MIDDLE;
-        rb = GetComponent<Rigidbody>();
     }
     void Update()
     {
@@ -41,7 +44,7 @@ public class Runner : MonoBehaviour
     {
         if (rb != null)
         {
-            rb.position = new Vector3(0, 0, roadLine * move);
+            rb.position = new Vector3((float)roadLine*move,0,0);
         }
     }
 }
