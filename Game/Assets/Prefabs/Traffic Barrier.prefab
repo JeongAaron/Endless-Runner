@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3140362433635525060}
   - component: {fileID: 3508884139032016540}
   - component: {fileID: 1508627245912422052}
+  - component: {fileID: -7978649340921897400}
   m_Layer: 0
   m_Name: Traffic Barrier
   m_TagString: Untagged
@@ -105,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.038192, y: 0.49899012, z: 0.8223572}
   m_Center: {x: -0.0000009834766, y: 0, z: 0.4195326}
+--- !u!114 &-7978649340921897400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934136072875871332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7f8e1dc488cd7f41828e1760b6fe741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30

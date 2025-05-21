@@ -12,10 +12,10 @@ public class ObstacleManager : MonoBehaviour
     [SerializeField] Transform [ ] transforms;
     [SerializeField] float activeTime = 5;
     [SerializeField] int random;
+    [SerializeField] float speed;
     void Start()
     {
         Create();
-        StartCoroutine(ActiveObstacle());
     }
     public void Create()
     {
@@ -26,6 +26,10 @@ public class ObstacleManager : MonoBehaviour
             obstacles.Add(clone);
             
         }
+    }
+    public void OnStartButtonClick()
+    {
+        StartCoroutine(ActiveObstacle());
     }
     public IEnumerator ActiveObstacle()
     {
@@ -38,7 +42,7 @@ public class ObstacleManager : MonoBehaviour
             }
             obstacles[random].transform.position = transforms[Random.Range(0, transforms.Length)].position;
             obstacles[random].SetActive(true);
-            if(ExamineActive()  == true)
+            if(ExamineActive())
             {
                 GameObject clone = Instantiate(prefab[Random.Range(0,prefab.Length)],transform);
                 clone.SetActive(false);

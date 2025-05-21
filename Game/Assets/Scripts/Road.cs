@@ -8,7 +8,7 @@ public class Road : MonoBehaviour, ICollidable
     [SerializeField] UnityEvent callback;
     public void Activate()
     {
-        if(callback != null)
+        if (callback != null)
         {
             callback.Invoke();
         }
