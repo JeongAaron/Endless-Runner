@@ -967,7 +967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3393ef315d1d541bfe470e6bd53c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texture2D: {fileID: 2800000, guid: e43eb6dc9e9ce1f47bac91c53a5246fc, type: 3}
+  texture2D: {fileID: 0}
 --- !u!1 &1473583602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1717,10 +1717,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles: []
-  prefab:
-  - {fileID: 4606519872012341236, guid: 69fc26682f1e7794ea3966d0aef1d5da, type: 3}
-  - {fileID: 4934136072875871332, guid: ada1fae6d8d17994f88a07de5f1d4acc, type: 3}
-  - {fileID: 8403719497124440482, guid: 9f59f5f4768f8684e9318625cd33c31c, type: 3}
+  obstaclenames:
+  - Oil Barrel
+  - Traffic Barrier
+  - Traffic Cone
   createCount: 5
   transforms:
   - {fileID: 50480058}

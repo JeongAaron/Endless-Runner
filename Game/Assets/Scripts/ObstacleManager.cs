@@ -7,12 +7,16 @@ using UnityEngine;
 public class ObstacleManager : MonoBehaviour
 {
     [SerializeField] List<GameObject> obstacles;
-    [SerializeField] GameObject [ ] prefab;
+    [SerializeField] string [ ] obstaclenames;
     [SerializeField] int createCount = 5;
     [SerializeField] Transform [ ] transforms;
     [SerializeField] float activeTime = 5;
     [SerializeField] int random;
     [SerializeField] float speed;
+    private void Awake()
+    {
+        obstacles.Capacity = 10;
+    }
     void Start()
     {
         Create();
@@ -21,7 +25,8 @@ public class ObstacleManager : MonoBehaviour
     {
         for(int i = 0; i < createCount; i++)
         {
-            GameObject clone = Instantiate(prefab[Random.Range(0,prefab.Length)],transform);
+            GameObject clone = Instantiate(Resources.Load<GameObject>(obstaclenames[Random.Range(0,obstaclenames.Length)]),transform);
+            clone.name = clone.name.Replace("(Clone)", "");
             clone.SetActive(false);
             obstacles.Add(clone);
             
@@ -44,7 +49,8 @@ public class ObstacleManager : MonoBehaviour
             obstacles[random].SetActive(true);
             if(ExamineActive())
             {
-                GameObject clone = Instantiate(prefab[Random.Range(0,prefab.Length)],transform);
+                GameObject clone = Instantiate(Resources.Load<GameObject>(obstaclenames[Random.Range(0, obstaclenames.Length)]), transform);
+                clone.name = clone.name.Replace("(Clone)", "");
                 clone.SetActive(false);
                 obstacles.Add(clone);
             }
