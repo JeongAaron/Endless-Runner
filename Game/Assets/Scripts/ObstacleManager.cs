@@ -13,12 +13,14 @@ public class ObstacleManager : MonoBehaviour
     [SerializeField] float activeTime = 5;
     [SerializeField] int random;
     [SerializeField] float speed;
+    private WaitForSeconds waitCache;
     private void Awake()
     {
         obstacles.Capacity = 10;
     }
     void Start()
     {
+        waitCache = new WaitForSeconds(activeTime);
         Create();
     }
     public void Create()
@@ -54,7 +56,7 @@ public class ObstacleManager : MonoBehaviour
                 clone.SetActive(false);
                 obstacles.Add(clone);
             }
-            yield return new WaitForSeconds(activeTime);
+            yield return waitCache;
         }
     }
     bool ExamineActive()
